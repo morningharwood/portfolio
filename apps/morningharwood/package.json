@@ -1,0 +1,52 @@
+{
+  "name": "@morningharwood/morningharwood",
+  "description": "Morning Harwood is a digital portfolio of works by Matthew Harwood",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop -o",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.33",
+    "gatsby-link": "^2.0.6",
+    "gatsby-plugin-canner-schema": "^1.0.9",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-styletron": "^3.0.2",
+    "gatsby-react-router-scroll": "^2.0.1",
+    "gatsby-source-filesystem": "^2.0.10",
+    "gatsby-transformer-remark": "^2.1.12",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-helmet": "^5.2.0",
+    "styletron-react": "^4.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@types/jest": "^23.3.9",
+    "@types/react": "^16.7.7",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-gatsby": "^0.1.4",
+    "eslint-config-fusion": "^4.0.0",
+    "eslint-import-resolver-alias": "^1.1.1",
+    "eslint-plugin-cup": "^2.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "gatsby-plugin-eslint": "^2.0.1",
+    "gatsby-plugin-flow": "^1.0.2",
+    "gatsby-plugin-root-import": "^2.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.2",
+    "react-test-renderer": "^16.7.0-alpha.2"
+  }
+}

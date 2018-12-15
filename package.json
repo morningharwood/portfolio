@@ -1,0 +1,57 @@
+{
+  "name": "gatsby-portfolio",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "canner-credential": "^0.1.8",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-flow-comments": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^4.0.0-alpha.25",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "canner": "^2.0.24",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "lerna": "^3.6.0",
+    "react-test-renderer": "^16.7.0-alpha.2",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "scripts": {
+    "test": "jest --config jest-config.js",
+    "testLib": "jest --config ./jest.config.js --watchAll",
+    "testApp": "cd apps/morningharwood && npm run test -- --watchAll",
+    "storybook": "start-storybook -p 9001 -c ./.storybook",
+    "cypress": "cypress open",
+    "app": "cd apps/morningharwood && npm start",
+    "concurrent": "concurrently --kill-others \"npm run app\" \"npm run storybook\" \"canner script:serve\"",
+    "start": "npm run concurrent",
+    "lerna-updated": "lerna updated",
+    "lerna-publish": "lerna publish"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morningharwood/gatsby-portfolio.git"
+  },
+  "author": "Matthew Harwood <matthhar12@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morningharwood/gatsby-portfolio/issues"
+  },
+  "homepage": "https://github.com/morningharwood/gatsby-portfolio#readme"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@morningharwood/mh-header",
+  "version": "0.0.13",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mv-babel": "node ../../tools/mv-babel.js",
+    "rm-babel": "node ../../tools/rm-babel.js",
+    "babel": "../../node_modules/.bin/babel src --out-dir dist",
+    "build": "npm run mv-babel && npm run babel && npm run rm-babel",
+    "publish": "npm publish"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "@storybook/react": "^4.0.0-alpha.25",
+    "babel-loader": "^8.0.4",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-test-renderer": "^16.7.0-alpha.2",
+    "webpack": "^4.26.1"
+  }
+}
