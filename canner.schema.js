@@ -2,9 +2,11 @@
 /* eslint-disable react/prop-types */
 
 import builder from 'canner-script';
-import Posts from './schema/posts.schema.js';
+import Blocks from './schema/blocks.schema.js';
 import Users from './schema/users.schema.js';
 import Routes from './schema/routes.schema';
+import Clients from './schema/clients.schema';
+import Components from './schema/components.schema';
 
 // Install @canner/@canner/storage and uncomment the codes below to upload image in your CMS
 // More Info: https://www.canner.io/docs/guides-storage.html
@@ -27,20 +29,31 @@ const userColumns = [{
   dataIndex: 'age'
 }];
 
-const postColumns = [{
-  title: 'Title',
-  dataIndex: 'title'
+const routeColumns = [{
+  title: 'Route Path',
+  dataIndex: 'routePath'
 }];
 
-const routeColumns = [{
-  title: 'Name',
-  dataIndex: 'name'
+const clientColumns = [{
+  title: 'Client Name',
+  dataIndex: 'clientName'
+}];
+const componentColumns = [{
+  title: 'Component Name',
+  dataIndex: 'componentName',
+}];
+
+const blockColumns = [{
+  title: 'Block Name',
+  dataIndex: 'blockName',
 }];
 
 export default (
   <root>
-    <Posts columns={postColumns} />
     <Users columns={userColumns} />
     <Routes columns={routeColumns} />
+    <Clients columns={clientColumns} />
+    <Components columns={componentColumns} />
+    <Blocks columns={blockColumns} />
   </root>
 );

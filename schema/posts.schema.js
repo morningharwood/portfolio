@@ -14,7 +14,7 @@ const Posts = ({attributes}) => <array
   imageStorage={attributes.imageStorage}
 >
   <toolbar>
-    <pagination />
+    <pagination/>
     <filter>
       <selectFilter
         label="Type"
@@ -44,44 +44,46 @@ const Posts = ({attributes}) => <array
     </filter>
   </toolbar>
   <Focus focus={['title', 'content']}>
-    <string keyName="title" title="title" required />
-    <object keyName="content" title="Content" ui="editor" />
+    <string keyName="title" title="title" required/>
+    <object keyName="content" title="Content" ui="editor"/>
     <Default title="Status" keyName="status">
-      <boolean keyName="trashed" />
-      <boolean keyName="draft" />
+      <boolean keyName="trashed"/>
+      <boolean keyName="draft"/>
     </Default>
-    <image keyName="featureImage" title="Feature Image" />
+    <image keyName="featureImage" title="Feature Image"/>
     <Default title="Page Property" keyName="page">
-      <boolean keyName="topLevel" title="Parent page" />
-      <number keyName="order" title="Order" uiParams={{min: 0}} />
+      <boolean keyName="topLevel" title="Parent page"/>
+      <number keyName="order" title="Order" uiParams={{min: 0}}/>
     </Default>
     <Default title="Share" keyName="share">
-      <boolean keyName="showShareButton" title="Show sharing button" />
-      <boolean keyName="showLikeButton" title="Show like button" />
+      <boolean keyName="showShareButton" title="Show sharing button"/>
+      <boolean keyName="showLikeButton" title="Show like button"/>
     </Default>
-    <relation keyName="author"
-              ui="singleSelect"
-              title="author"
-              relation={{type: 'toOne', to: 'users'}}
-              uiParams={{
-                textCol: 'name',
-                columns: [{
-                  title: 'Name',
-                  dataIndex: 'name'
-                }]
-              }}
+    <relation
+      keyName="author"
+      ui="singleSelect"
+      title="author"
+      relation={{type: 'toOne', to: 'users'}}
+      uiParams={{
+        textCol: 'name',
+        columns: [{
+          title: 'Name',
+          dataIndex: 'name'
+        }]
+      }}
     />
-    <relation keyName="route"
-              ui="singleSelect"
-              title="route"
-              relation={{type: 'toOne', to: 'routes'}}
-              uiParams={{
-                textCol: 'name',
-                columns: [{
-                  title: 'Name',
-                  dataIndex: 'name'
-                }]
-              }}
+    <relation
+      keyName="route"
+      ui="singleSelect"
+      title="route"
+      relation={{type: 'toOne', to: 'routes'}}
+      uiParams={{
+        textCol: 'name',
+        columns: [{
+          title: 'Name',
+          dataIndex: 'name'
+        }]
+      }}
     />
   </Focus>
 </array>;

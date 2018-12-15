@@ -2,12 +2,13 @@
 import React from 'react';
 
 const Header = props => {
-  const {title, description} = props;
+  const {title, description, category} = props;
   return (
-    <div>
-      <div>{title}</div>
-      <div>{description} </div>
-    </div>
+    <header>
+      <h3>{category}</h3>
+      <h1>{title}</h1>
+      <p>{description} </p>
+    </header>
   );
 };
 

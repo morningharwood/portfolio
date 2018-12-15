@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 
 import builder, {Default} from 'canner-script';
-import {Header} from './header.schema';
+import {Header} from '../libs/mh-header/src/header.schema';
 
 const Routes = ({attributes}) => (
   <array keyName="routes" title="routes"
@@ -13,6 +13,7 @@ const Routes = ({attributes}) => (
     <toolbar>
       <pagination />
     </toolbar>
+    <string keyName="routePath" title="Page Path" />
     <Header keyName="routeHeader" />
   </array>
 );
