@@ -3,8 +3,8 @@
 
 import builder, {Default} from 'canner-script';
 
-const Routes = ({attributes}) => (
-  <array keyName="routes" title="routes"
+const Roles = ({attributes}) => (
+  <array keyName="roles" title="roles"
     ui="table" uiParams={{
       columns: attributes.columns
     }}
@@ -12,8 +12,8 @@ const Routes = ({attributes}) => (
     <toolbar>
       <pagination />
     </toolbar>
-    <string keyName="routePath" title="Page Path" />
+    <string keyName="roleName" title="Role" />
 
   </array>
 );
-export default Routes;
+export default Roles;

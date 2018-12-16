@@ -3,17 +3,20 @@
 
 import builder, {Default} from 'canner-script';
 
-const Routes = ({attributes}) => (
-  <array keyName="routes" title="routes"
-    ui="table" uiParams={{
+
+const Categories = ({attributes}) => (
+  <array
+    keyName="categories"
+    title="categories"
+    ui="table"
+    uiParams={{
       columns: attributes.columns
     }}
   >
     <toolbar>
       <pagination />
     </toolbar>
-    <string keyName="routePath" title="Page Path" />
-
+    <string keyName="categoriesName" title="Category Name" />
   </array>
 );
-export default Routes;
+export default Categories;

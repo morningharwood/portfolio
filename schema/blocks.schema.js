@@ -1,8 +1,14 @@
 /** @jsx builder */
 /* eslint-disable react/prop-types */
 
-import builder, {Default} from 'canner-script';
+import builder, {Default, Condition} from 'canner-script';
+import {Header} from '../libs/mh-header/src/header.schema';
 
+const blockConfig = [{
+  text: 'Header',
+  value: 'HEADER',
+  Component: Header,
+}];
 
 const blocks = ({attributes}) => (
   <array
@@ -14,9 +20,10 @@ const blocks = ({attributes}) => (
     }}
   >
     <toolbar>
-      <pagination />
+      <pagination/>
     </toolbar>
-    <string keyName="blockName" title="Block Name" />
+    <string keyName="blockName" title="Block Name"/>
+
     <relation
       keyName="route"
       ui="singleSelect"
@@ -31,34 +38,30 @@ const blocks = ({attributes}) => (
       }}
     />
     <array
-      keyName="table"
+      keyName="components"
+      title="components"
+      ui="table"
       uiParams={{
         columns: [{
-          title: "components",
-          key: "components",
-          dataIndex: "components"
+          title: 'components',
+          dataIndex: 'blockName2'
         }]
       }}
-      ui="table">
-      <relation
+    >
+      <string
         keyName="component"
-        ui="singleSelect"
-        title="component"
-        relation={{type: 'toMany', to: 'components'}}
+        ui="select"
         uiParams={{
-          textCol: 'componentName',
-          columns: [{
-            title: 'Component Name',
-            dataIndex: 'componentName'
-          }]
+          options: blockConfig,
         }}
       />
-    </array>
+      {blockConfig.map(({Component, value, text}, index) => {
+        return (
+          <Component keyName="blockName2" />
+        )
+      })}
 
-    {/*
-      :::In place of this comment:::
-      For each component added add the schema of tht component into the template for author editing.
-    */}
+    </array>
   </array>
 );
 
