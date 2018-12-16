@@ -11,6 +11,7 @@ import Agencies from './schema/agencies.schema';
 import Roles from './schema/roles.schema';
 import Categories from './schema/categories.schema';
 import Tags from './schema/tags.schema';
+import Articles from './schema/articles.schema';
 
 // Install @canner/@canner/storage and uncomment the codes below to upload image in your CMS
 // More Info: https://www.canner.io/docs/guides-storage.html
@@ -72,6 +73,11 @@ const tagColumns = [{
   dataIndex: 'tagName',
 }];
 
+const articleColumns = [{
+  title: 'Article Name',
+  dataIndex: 'articleName',
+}];
+
 export default (
   <root>
     <Users columns={userColumns} />
@@ -83,6 +89,7 @@ export default (
     <Tags columns={tagColumns}/>
     <Components columns={componentColumns} />
     <Blocks columns={blockColumns} />
+    <Articles columns={articleColumns} />
 
   </root>
 );
