@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 
 import builder from 'canner-script';
-import Blocks from './schema/blocks.schema.js';
 import Users from './schema/users.schema.js';
 import Routes from './schema/routes.schema';
 import Clients from './schema/clients.schema';
@@ -54,11 +53,6 @@ const componentColumns = [{
   dataIndex: 'componentName',
 }];
 
-const blockColumns = [{
-  title: 'Block Name',
-  dataIndex: 'blockName',
-}];
-
 const rolesColumns = [{
   title: 'Roles Name',
   dataIndex: 'rolesName',
@@ -88,7 +82,6 @@ export default (
     <Categories columns={categoryColumns}/>
     <Tags columns={tagColumns}/>
     <Components columns={componentColumns} />
-    <Blocks columns={blockColumns} />
     <Articles columns={articleColumns} />
 
   </root>

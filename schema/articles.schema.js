@@ -1,11 +1,13 @@
 /** @jsx builder */
 /* eslint-disable react/prop-types */
 
-import builder, {Default} from 'canner-script';
+import builder, {Default, Block} from 'canner-script';
 import Theme from './ui/theme.schema';
 import Margin from './ui/margin.schema';
 import Borders from './ui/borders.schema';
 import Meta from './ui/meta.schema';
+import Elements from './elements.schema';
+
 
 const Articles = ({attributes}) => (
   <array
@@ -21,6 +23,19 @@ const Articles = ({attributes}) => (
     </toolbar>
     <string keyName="articleName" title="Article Name"/>
     <Meta />
+    <relation
+      keyName="route"
+      ui="singleSelect"
+      title="route"
+      relation={{type: 'toOne', to: 'routes'}}
+      uiParams={{
+        textCol: 'name',
+        columns: [{
+          title: 'Name',
+          dataIndex: 'name'
+        }]
+      }}
+    />
     <Theme defaultTheme={'sos'} />
     <array
       keyName="sections"
@@ -29,13 +44,30 @@ const Articles = ({attributes}) => (
       uiParams={{
         columns: [{
           title: 'sections',
-          dataIndex: 'blockName2'
+          dataIndex: 'sectionName'
         }]
       }}
     >
+      <Block title={'Section Name'}>
+        <string keyName="sectionName" title="name"/>
+      </Block>
       <Theme />
       <Margin />
       <Borders keyName={'borders'}/>
+      <array
+        keyName="elements"
+        title="elements"
+        ui="table"
+        uiParams={{
+          columns: [{
+            title: 'elements',
+            dataIndex: 'elementName'
+          }]
+        }}
+      >
+        <Elements />
+      </array>
+
     </array>
   </array>
 );
