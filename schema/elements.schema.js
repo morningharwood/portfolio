@@ -19,11 +19,16 @@ const Elements = ({attributes}) => (
         options: elementsConfig,
       }}
     />
-    <Condition
-      match={v => v.component === 'HEADER'}
-    >
-      <Header keyName="elementName"/>
-    </Condition>
+    <string keyName='elementName' />
+    {elementsConfig.map(({Component, value, text}, index) => {
+      return (
+        <Condition
+          match={v => v.component === value}
+        >
+          <Component keyName={text.toLowerCase()} />
+        </Condition>
+      )
+    })}
   </Block>
 );
 
