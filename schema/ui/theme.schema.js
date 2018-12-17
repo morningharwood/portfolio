@@ -1,7 +1,7 @@
 /** @jsx builder */
 /* eslint-disable react/prop-types */
 
-import builder from 'canner-script';
+import builder, {Row, Block} from 'canner-script';
 
 const themeParams = [{
   text: 'Dark',
@@ -16,14 +16,18 @@ const themeParams = [{
 
 const Theme = () => {
   return (
-    <string
-      keyName="theme"
-      ui="select"
-      defaultValue={themeParams[2].value}
-      uiParams={{
-        options: themeParams,
-      }}
-    />
+    <Row>
+      <Block title="Theme">
+        <string
+          keyName="theme"
+          ui="select"
+          defaultValue={themeParams[2].value}
+          uiParams={{
+            options: themeParams,
+          }}
+        />
+      </Block>
+    </Row>
   );
 }
 
