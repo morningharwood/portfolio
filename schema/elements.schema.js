@@ -13,19 +13,18 @@ const elementsConfig = [{
 const Elements = ({attributes}) => (
   <Block>
     <string
-      keyName="component"
+      keyName="element"
       ui="select"
       uiParams={{
         options: elementsConfig,
       }}
     />
-    <string keyName='elementName' />
     {elementsConfig.map(({Component, value, text}, index) => {
       return (
         <Condition
-          match={v => v.component === value}
+          match={v => v.element === value}
         >
-          <Component keyName={text.toLowerCase()} />
+          <Component keyName={'data'} />
         </Condition>
       )
     })}

@@ -10,7 +10,6 @@ module.exports = {
     // `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-flow`,
-    `gatsby-plugin-canner-schema`,
     `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-plugin-root-import',
@@ -30,6 +29,21 @@ module.exports = {
       options: {
         // You can pass options to Styletron.
         prefix: '_',
+      },
+    },
+    {
+      resolve: 'gatsby-source-firestore',
+      options: {
+        credential: require('../../cert.json'),
+        types: [
+          {
+            type: 'Article',
+            collection: 'articles',
+            map: doc => ({
+              data: doc
+            }),
+          }
+        ],
       },
     },
   ],

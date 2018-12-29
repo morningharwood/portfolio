@@ -29,10 +29,10 @@ const Articles = ({attributes}) => (
       title="route"
       relation={{type: 'toOne', to: 'routes'}}
       uiParams={{
-        textCol: 'name',
+        textCol: 'routePath',
         columns: [{
           title: 'Name',
-          dataIndex: 'name'
+          dataIndex: 'routePath'
         }]
       }}
     />
@@ -52,7 +52,7 @@ const Articles = ({attributes}) => (
         <string keyName="sectionName" title="name"/>
       </Block>
       <Theme />
-      <Margin />
+      <Margin keyName={'margin'} />
       <Borders keyName={'borders'}/>
       <array
         keyName="elements"
@@ -61,7 +61,7 @@ const Articles = ({attributes}) => (
         uiParams={{
           columns: [{
             title: 'elements',
-            dataIndex: 'elementName'
+            dataIndex: 'element'
           }]
         }}
       >

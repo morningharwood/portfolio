@@ -5,9 +5,9 @@ import builder, {Row, Condition, Block} from 'canner-script';
 import Breakpoint from './breakpoint.schema';
 import Position from './position.schema'
 
-const Margin = () => {
+const Margin = ({attributes}) => {
   return (
-    <Row>
+    <object keyName={attributes.keyName}>
       <Block title={'Margin'}>
         <Breakpoint
           small={
@@ -42,7 +42,7 @@ const Margin = () => {
           }
         />
       </Block>
-    </Row>
+    </object>
   );
 }
 
