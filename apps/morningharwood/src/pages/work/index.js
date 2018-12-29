@@ -8,24 +8,35 @@ const RedAnchor = styled('a', {color: 'red'});
 const FancyAnchor = withStyle(RedAnchor, {fontFamily: 'cursive'});
 
 const WorkComponent = ({
-  data: {
-    allMarkdownRemark: {edges},
-  },
-}) => (
-  <Fragment>
-    <Helmet>
-      <title>Work</title>
-    </Helmet>
-    <FancyAnchor>Work</FancyAnchor>
-    {edges.map(({node: {frontmatter}}) => {
-      return (
-        <div key={frontmatter.path}>
-          <Link to={frontmatter.path}>{frontmatter.title}</Link>
-        </div>
-      );
-    })}
-  </Fragment>
-);
+                         data: {
+                           allMarkdownRemark: {edges},
+                           allArticle,
+                         },
+                       }) => {
+
+  return (
+    <Fragment>
+      <Helmet>
+        <title>Work</title>
+      </Helmet>
+      <FancyAnchor>Work</FancyAnchor>
+      {allArticle.edges.map(node => node.node.data).map((d, key) => {
+        return (
+          <div key={key}>
+            <p>{d.articleName}</p>
+          </div>
+        )
+      })}
+      {edges.map(({node: {frontmatter}}) => {
+        return (
+          <div key={frontmatter.path}>
+            <Link to={frontmatter.path}>{frontmatter.title}</Link>
+          </div>
+        );
+      })}
+    </Fragment>
+  );
+}
 
 export const query = graphql`
   query WorkpageQuery {
@@ -38,6 +49,34 @@ export const query = graphql`
           frontmatter {
             path
             root
+          }
+        }
+      }
+    }
+    allArticle {
+      edges {
+        node {
+          id
+          data {
+            meta {
+              metaTitle
+              metaDescription
+            }
+            theme
+            articleName
+            sections {
+              theme
+              sectionName
+              elements {
+                element
+                data {
+                  dateTo
+                  dateFrom
+                  headerTitle
+                  headerDesc
+                }
+              }
+            }
           }
         }
       }
