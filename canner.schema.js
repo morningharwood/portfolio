@@ -13,16 +13,6 @@ import Tags from './schema/tags.schema';
 import Articles from './schema/articles.schema';
 import Outlets from './schema/outlets.schema';
 
-// Install @canner/@canner/storage and uncomment the codes below to upload image in your CMS
-// More Info: https://www.canner.io/docs/guides-storage.html
-// --------------------------------------
-// import {ImgurStorage} from '@canner/storage';
-// const imageStorage = new ImgurStorage({
-//   clientId: "your imgur client id",
-//   mashapeKey: "" // optional
-// });
-console.log(builder);
-
 const userColumns = [{
   title: 'Name',
   dataIndex: 'name'

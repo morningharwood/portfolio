@@ -3,9 +3,21 @@
 
 import builder, {Default} from 'canner-script';
 import Elements from './elements.schema';
+import {FirebaseClientStorage} from '@canner/storage';
+import firebase from 'firebase';
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyBdL4GtTMObajo_stnxNaSnvhIcRl5UIeU',
+  storageBucket: 'gatsby-morningharwood.appspot.com'
+});
+
+
+firebase.auth().signInAnonymously();
+const fileStorage = new FirebaseClientStorage({firebase});
 
 const Templates = ({attributes}) => (
   <array keyName="outlets" title="outlets"
+         fileStorage={fileStorage}
          ui="table" uiParams={{
     columns: attributes.columns
   }}
@@ -40,7 +52,7 @@ const Templates = ({attributes}) => (
     >
       <Elements />
     </array>
-
+    <image keyName="photo" ui="image"/>
   </array>
 );
 export default Templates;
