@@ -11,19 +11,19 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-flow`,
     `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-root-import',
-      options: {
-        ['component']: path.join(__dirname, 'src/components'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-root-import',
+    //   options: {
+    //     ['component']: path.join(__dirname, 'src/components'),
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //     name: 'pages',
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-styletron',
       options: {
@@ -37,8 +37,15 @@ module.exports = {
         credential: require('../../cert.json'),
         types: [
           {
-            type: 'Article',
+            type: 'Articles',
             collection: 'articles',
+            map: doc => ({
+              data: doc
+            }),
+          },
+          {
+            type: 'Routes',
+            collection: 'routes',
             map: doc => ({
               data: doc
             }),
