@@ -5,6 +5,8 @@ import {styled} from 'styletron-react';
 const StyledHeader = styled('h1', () => {
   return {
     fontSize: 'var(--ms5a)',
+    fontFamily: 'var(--serif)',
+    color: 'var(--wow)'
   }
 });
 

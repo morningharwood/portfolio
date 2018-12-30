@@ -1,3 +1,61 @@
-html, body, div {
-    background: red !important;
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+body {
+    font-family: 'system';
+}
+
+:root {
+    --font-size: 100%;
+    --ratio: 1.333;
+    --ratio-alt: 1.68;
+
+    --ms5: calc(var(--ms4) * var(--ratio));
+    --ms4: calc(var(--ms3) * var(--ratio));
+    --ms3: calc(var(--ms2) * var(--ratio));
+    --ms2: calc(var(--ms1) * var(--ratio));
+    --ms1: calc(var(--ms0) * var(--ratio));
+    --ms0: calc(var(--font-size) * var(--ratio));
+    --ms-1: calc(var(--ms0) / var(--ratio));
+    --ms-2: calc(var(--ms-1) / var(--ratio));
+    --ms-3: calc(var(--ms-2) / var(--ratio));
+    --ms-4: calc(var(--ms-3) / var(--ratio));
+    --ms-5: calc(var(--ms-4) / var(--ratio));
+
+    --ms5a: calc(var(--ms4) * var(--ratio-alt));
+    --ms4a: calc(var(--ms3) * var(--ratio-alt));
+    --ms3a: calc(var(--ms2) * var(--ratio-alt));
+    --ms2a: calc(var(--ms1) * var(--ratio-alt));
+    --ms1a: calc(var(--ms0) * var(--ratio-alt));
+    --ms0a: calc(var(--font-size) * var(--ratio-alt));
+    --ms-1a: calc(var(--ms0) / var(--ratio-alt));
+    --ms-2a: calc(var(--ms-1) / var(--ratio-alt));
+    --ms-3a: calc(var(--ms-2) / var(--ratio-alt));
+    --ms-4a: calc(var(--ms-3) / var(--ratio-alt));
+    --ms-5a: calc(var(--ms-4) / var(--ratio-alt));
+
+    --bg: '#fff';
+    --bgOn: '#333';
+
+    --primary: '#333';
+    --primaryOn: '#eee';
+
+    --secondary: '#f7f7f7';
+    --secondaryOn: '#555';
+
+    --tertiary: '#ddd';
+    --tertiaryOn: '#555';
+
+    --primaryAlt: '#ff6347';
+    --primaryAltOn: '#fff';
+
+    --secondaryAlt: rgba(10,185,207,.3);
+    --secondaryAltOn: '#333';
+    --wow: '#ff6347';
+    --mono: 'monospace';
+    --serif: 'serif';
 }

@@ -35,7 +35,7 @@
     "test": "jest --config jest-config.js",
     "testLib": "jest --config ./jest.config.js --watchAll",
     "testApp": "cd apps/morningharwood && npm run test -- --watchAll",
-    "storybook": "start-storybook -p 9001 -c ./.storybook",
+    "storybook": "start-storybook -p 9001 -c ./.storybook -s ./libs/mh-styles/src",
     "cypress": "cypress open",
     "app": "cd apps/morningharwood && npm start",
     "concurrent": "concurrently --kill-others \"npm run app\" \"npm run storybook\" \"canner script:serve\"",
