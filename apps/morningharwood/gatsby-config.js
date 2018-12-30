@@ -7,23 +7,9 @@ module.exports = {
     description: 'this is my blog',
   },
   plugins: [
-    // `gatsby-plugin-eslint`,
+    `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-flow`,
-    `gatsby-transformer-remark`,
-    // {
-    //   resolve: 'gatsby-plugin-root-import',
-    //   options: {
-    //     ['component']: path.join(__dirname, 'src/components'),
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     path: `${__dirname}/src/pages`,
-    //     name: 'pages',
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-styletron',
       options: {
@@ -39,6 +25,13 @@ module.exports = {
           {
             type: 'Articles',
             collection: 'articles',
+            map: doc => ({
+              data: doc
+            }),
+          },
+          {
+            type: 'Outlets',
+            collection: 'outlets',
             map: doc => ({
               data: doc
             }),

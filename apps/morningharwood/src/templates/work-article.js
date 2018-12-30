@@ -9,5 +9,4 @@ const Template = ({pageContext: ctx}) => {
   );
 };
 
-
 export default Template;
