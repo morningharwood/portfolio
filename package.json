@@ -28,7 +28,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
-    "canner": "^2.0.47",
+    "canner": "^2.0.48",
     "concurrently": "^4.1.0",
     "jest": "^23.6.0",
     "lerna": "^3.6.0",
