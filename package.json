@@ -44,6 +44,8 @@
     "app": "cd apps/morningharwood && npm start",
     "concurrent": "concurrently --kill-others \"npm run app\" \"npm run storybook\" \"canner script:serve\"",
     "start": "npm run concurrent",
+    "bootstrap": "lerna bootstrap",
+    "lerna-build": "lerna run build",
     "lerna-updated": "lerna updated",
     "lerna-publish": "lerna publish"
   },
