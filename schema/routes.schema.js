@@ -13,7 +13,6 @@ const Routes = ({attributes}) => (
       <pagination />
     </toolbar>
     <string keyName="routePath" title="Page Path" />
-
   </array>
 );
 export default Routes;
