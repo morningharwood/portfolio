@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "libs/*"
+  ],
   "private": true,
   "dependencies": {
     "canner-credential": "^0.1.8",
