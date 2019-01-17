@@ -12,6 +12,9 @@ import Categories from './schema/categories.schema';
 import Tags from './schema/tags.schema';
 import Articles from './schema/articles.schema';
 import Outlets from './schema/outlets.schema';
+import {FirebaseStorage} from '@canner/storage';
+
+
 
 const userColumns = [{
   title: 'Name',
@@ -68,8 +71,11 @@ const outletsColumns = [{
   dataIndex: 'outletName',
 }];
 
+
+const fileStorage = new FirebaseStorage(options);
+
 export default (
-  <root>
+  <root fileStorage={fileStorage}>
     <Users columns={userColumns} />
     <Routes columns={routeColumns} />
     <Clients columns={clientColumns} />

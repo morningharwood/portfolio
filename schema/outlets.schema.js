@@ -4,9 +4,6 @@
 import builder, {Default} from 'canner-script';
 import Elements from './elements.schema';
 
-
-
-
 const Templates = ({attributes}) => (
   <array keyName="outlets" title="outlets"
          ui="table" uiParams={{

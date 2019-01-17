@@ -950,6 +950,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@canner/storage@^2.0.11":
+  version "2.0.11"
+  resolved "https://unpm.uberinternal.com/@canner%2fstorage/-/storage-2.0.11.tgz#4d25e9563963a72f373ca0db716ff242706f1b3c"
+  integrity sha512-BB4kqAdIjKkPc7ljewlFWNJsmy0tHtfD8l32ogPzzImQK09pCCRETJbxEMrCcwX25Qf3f9Y5KtMtoaQRm+tZGQ==
+  dependencies:
+    axios "^0.18.0"
+    promise-polyfill "^8.1.0"
+
 "@emotion/cache@^0.8.8":
   version "0.8.8"
   resolved "https://unpm.uberinternal.com/@emotion%2fcache/-/cache-0.8.8.tgz#2c3bd1aa5fdb88f1cc2325176a3f3201739e726c"
@@ -2729,6 +2737,14 @@ axe-core@^3.1.2:
   resolved "https://unpm.uberinternal.com/axe-core/-/axe-core-3.1.2.tgz#ca0aff897ebefca7552f97859dc1217c06c4f9e6"
   integrity sha512-e1WVs0SQu3tM29J9a/mISGvlo2kdCStE+yffIAJF6eb42FS+eUFEVz9j4rgDeV2TAfPJmuOZdRetWYycIbK7Vg==
 
+axios@^0.18.0:
+  version "0.18.0"
+  resolved "https://unpm.uberinternal.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+  dependencies:
+    follow-redirects "^1.3.0"
+    is-buffer "^1.1.5"
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://unpm.uberinternal.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -3685,7 +3701,7 @@ canner-ref-id@2.0.14:
   resolved "https://unpm.uberinternal.com/canner-ref-id/-/canner-ref-id-2.0.14.tgz#5715d45d92dee2efa3ef683c77cfc199db4375ae"
   integrity sha512-BPR7uF48pP2AepA9No/jCCgMsNH6PrItEQrcH1Hwab6kxv96F24+ZtGKhSa8kIKNeZfH8DAH9I+LoL4kNjGz9w==
 
-canner@^2.0.47:
+canner@^2.0.48:
   version "2.0.48"
   resolved "https://unpm.uberinternal.com/canner/-/canner-2.0.48.tgz#275757576a9c0dc41a1c463d5f69eae305f53d16"
   integrity sha512-LnqJWwTnxJ2BSpbym/TOdUDHyU3tqYMvsYqxWl1nJwWS9rVSoZ57RGTjWqeRTbtzmrprnWA3cgYIj9nK6Wv/Gg==
@@ -4522,7 +4538,7 @@ debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0:
+debug@3.1.0, debug@=3.1.0:
   version "3.1.0"
   resolved "https://unpm.uberinternal.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
@@ -5532,6 +5548,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
+
+follow-redirects@^1.3.0:
+  version "1.6.1"
+  resolved "https://unpm.uberinternal.com/follow-redirects/-/follow-redirects-1.6.1.tgz#514973c44b5757368bad8bddfe52f81f015c94cb"
+  integrity sha512-t2JCjbzxQpWvbhts3l6SH1DKzSrx8a+SsaVf4h6bG4kOXUuPYS/kg2Lr4gQSb7eemaHqJkOThF1BGyjlUkO1GQ==
+  dependencies:
+    debug "=3.1.0"
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -9224,6 +9247,11 @@ promise-polyfill@^7.1.0:
   version "7.1.2"
   resolved "https://unpm.uberinternal.com/promise-polyfill/-/promise-polyfill-7.1.2.tgz#ab05301d8c28536301622d69227632269a70ca3b"
   integrity sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==
+
+promise-polyfill@^8.1.0:
+  version "8.1.0"
+  resolved "https://unpm.uberinternal.com/promise-polyfill/-/promise-polyfill-8.1.0.tgz#30059da54d1358ce905ac581f287e184aedf995d"
+  integrity sha512-OzSf6gcCUQ01byV4BgwyUCswlaQQ6gzXc23aLQWhicvfX9kfsUiUhgt3CCQej8jDnl8/PhGF31JdHX2/MzF3WA==
 
 promise-retry@^1.1.1:
   version "1.1.1"
