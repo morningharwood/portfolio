@@ -3701,10 +3701,10 @@ canner-ref-id@2.0.14:
   resolved "https://unpm.uberinternal.com/canner-ref-id/-/canner-ref-id-2.0.14.tgz#5715d45d92dee2efa3ef683c77cfc199db4375ae"
   integrity sha512-BPR7uF48pP2AepA9No/jCCgMsNH6PrItEQrcH1Hwab6kxv96F24+ZtGKhSa8kIKNeZfH8DAH9I+LoL4kNjGz9w==
 
-canner@^2.0.48:
-  version "2.0.48"
-  resolved "https://unpm.uberinternal.com/canner/-/canner-2.0.48.tgz#275757576a9c0dc41a1c463d5f69eae305f53d16"
-  integrity sha512-LnqJWwTnxJ2BSpbym/TOdUDHyU3tqYMvsYqxWl1nJwWS9rVSoZ57RGTjWqeRTbtzmrprnWA3cgYIj9nK6Wv/Gg==
+canner@^2.0.49:
+  version "2.0.49"
+  resolved "https://unpm.uberinternal.com/canner/-/canner-2.0.49.tgz#13414e1fe2e6ab04673f6d3a7cbd816a8de34c29"
+  integrity sha512-4Xs+3YILDZ95IfT9SQ3vhUFO79hxuWkq2H+lQCDjns4wC4GAf72qFn8Sj0vkC0YEGY0QPyBW9EHiqgaUm4iE8Q==
   dependencies:
     "@babel/runtime" "^7.2.0"
     ajv "^6.5.2"

@@ -12,7 +12,8 @@ import Categories from './schema/categories.schema';
 import Tags from './schema/tags.schema';
 import Articles from './schema/articles.schema';
 import Outlets from './schema/outlets.schema';
-import {FirebaseStorage} from '@canner/storage';
+import firebase from 'firebase';
+import {FirebaseClientStorage} from '@canner/storage';
 
 
 
@@ -71,8 +72,13 @@ const outletsColumns = [{
   dataIndex: 'outletName',
 }];
 
+firebase.initializeApp({
+  apiKey: 'AIzaSyBdL4GtTMObajo_stnxNaSnvhIcRl5UIeU',
+  storageBucket: 'gatsby-morningharwood.appspot.com'
+});
 
-const fileStorage = new FirebaseStorage(options);
+firebase.auth().signInAnonymously();
+const fileStorage = new FirebaseClientStorage({firebase});
 
 export default (
   <root fileStorage={fileStorage}>
