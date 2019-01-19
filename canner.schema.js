@@ -78,10 +78,10 @@ firebase.initializeApp({
 });
 
 firebase.auth().signInAnonymously();
-const fileStorage = new FirebaseClientStorage({firebase});
+const imageStorage = new FirebaseClientStorage({firebase});
 
 export default (
-  <root fileStorage={fileStorage}>
+  <root imageStorage={imageStorage}>
     <Users columns={userColumns} />
     <Routes columns={routeColumns} />
     <Clients columns={clientColumns} />
@@ -92,6 +92,5 @@ export default (
     <Components columns={componentColumns} />
     <Articles columns={articleColumns} />
     <Outlets columns={outletsColumns} />
-
   </root>
 );
