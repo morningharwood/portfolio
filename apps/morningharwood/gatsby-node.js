@@ -5,26 +5,8 @@ const get = require('lodash.get');
 
 const allFirestoreQueries = `
 query {
-  allOutlets {
-    edges {
-      node {
-        data {
-          route
-          elements {
-            element
-            data {
-              dateTo
-              dateFrom
-              headerTitle
-              headerDesc
-            }
-          }
-        }
-      }
-    }
-  }
   allRoutes {
-  	edges {
+    edges {
       node {
         id
         data {
@@ -66,7 +48,7 @@ query {
 
 exports.createPages = async ({graphql, actions}) => {
   const {createPage} = actions;
-  const {data: {allArticles, allRoutes, allOutlets}} = await graphql(allFirestoreQueries);
+  const {data: {allArticles, allRoutes}} = await graphql(allFirestoreQueries);
 
   const parentRoutes = allRoutes.edges.map(({node}) => {
     createPage({
@@ -76,7 +58,7 @@ exports.createPages = async ({graphql, actions}) => {
         data: {
           routes: node.data,
           articles:  allArticles.edges.filter(({node : articleNode}) => node.id === articleNode.data.route),
-          outlets: allOutlets.edges.filter(({node: outletNode}) => node.id === outletNode.data.route),
+          // outlets: allOutlets.edges.filter(({node: outletNode}) => node.id === outletNode.data.route),
         },
         // prev: isFirst ? null : value.nodes[index - 1],
         // next: isLast ? null : value.nodes[index + 1],
