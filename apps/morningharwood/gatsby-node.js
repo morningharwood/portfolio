@@ -5,6 +5,13 @@ const get = require('lodash.get');
 
 const allFirestoreQueries = `
 query {
+  allOutlets {
+    edges {
+      node {
+        id
+      }
+    }
+  }
   allRoutes {
     edges {
       node {

@@ -18,7 +18,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-firestore',
+      resolve: 'gatsby-source-firestore-live',
       options: {
         credential: require('../../cert.json'),
         types: [
