@@ -31,13 +31,29 @@ exports.sourceNodes = async (
   });
 
 
-
   const {createNode} = actions;
+
   const promises = types.map(
     async ({ collection, type, map = node => node }) => {
-      const snapshot = db.collection(collection);
+      const snapshot = await db.collection(collection);
+      const ssg = await snapshot.get();
+      for (let doc of ssg.docs) {
+        const contentDigest = getDigest(doc.id);
+        createNode(
+          Object.assign({}, map(doc.data()), {
+            id: doc.id,
+            parent: null,
+            children: [],
+            internal: {
+              type,
+              contentDigest,
+            },
+          })
+        );
+        Promise.resolve();
+      }
       snapshot.onSnapshot((querySnapshot) => {
-        for (let doc of querySnapshot.docs) {
+        querySnapshot.docs.forEach( (doc) => {
           const contentDigest = getDigest(doc.id);
           createNode(
             Object.assign({}, map(doc.data()), {
@@ -48,13 +64,16 @@ exports.sourceNodes = async (
                 type,
                 contentDigest,
               },
-            })
+            }),
           );
-        }
+        });
       });
-      Promise.resolve();
+      console.log('yoooo'.repeat(1000))
     }
   );
   await Promise.all(promises);
+  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!start!!!!!!!!!!!!!!!!!!!!!!!!!!');
+
+  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!done!!!!!!!!!!!!!!!!!!!!!!!!!!');
   return;
 };
