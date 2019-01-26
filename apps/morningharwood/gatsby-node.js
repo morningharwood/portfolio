@@ -2,13 +2,16 @@
 const path = require('path');
 const kebabCase = require('lodash.kebabcase');
 const get = require('lodash.get');
+const fse = require('fs-extra');
 
 const allFirestoreQueries = `
 query {
   allOutlets {
     edges {
       node {
-        id
+        data {
+          outletName
+        }
       }
     }
   }
@@ -55,17 +58,20 @@ query {
 
 exports.createPages = async ({graphql, actions}) => {
   const {createPage} = actions;
-  const {data: {allArticles, allRoutes}} = await graphql(allFirestoreQueries);
+  const {data: {allArticles, allRoutes, allOutlets}} = await graphql(allFirestoreQueries);
 
   const parentRoutes = allRoutes.edges.map(({node}) => {
+    const nodePath = `./src/templates/${node.data.name}.js`;
+    fse.ensureFileSync(nodePath);
+
     createPage({
       path: node.data.routePath,
-      component: path.resolve(`./src/templates/${node.data.name}.js`),
+      component: path.resolve(nodePath),
       context: {
         data: {
           routes: node.data,
           articles:  allArticles.edges.filter(({node : articleNode}) => node.id === articleNode.data.route),
-          // outlets: allOutlets.edges.filter(({node: outletNode}) => node.id === outletNode.data.route),
+          outlets: allOutlets.edges.filter(({node: outletNode}) => node.id === outletNode.data.route),
         },
         // prev: isFirst ? null : value.nodes[index - 1],
         // next: isLast ? null : value.nodes[index + 1],

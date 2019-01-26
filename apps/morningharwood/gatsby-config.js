@@ -7,7 +7,17 @@ module.exports = {
     description: 'this is my blog',
   },
   plugins: [
-    `gatsby-plugin-eslint`,
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.jsx$/,
+        exclude: /(node_modules|cache|public|__archive__)/,
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-flow`,
     {

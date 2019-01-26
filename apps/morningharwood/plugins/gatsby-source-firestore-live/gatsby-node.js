@@ -68,12 +68,8 @@ exports.sourceNodes = async (
           );
         });
       });
-      console.log('yoooo'.repeat(1000))
     }
   );
   await Promise.all(promises);
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!start!!!!!!!!!!!!!!!!!!!!!!!!!!');
-
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!done!!!!!!!!!!!!!!!!!!!!!!!!!!');
   return;
 };
