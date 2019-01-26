@@ -11,16 +11,11 @@ import Roles from './schema/roles.schema';
 import Categories from './schema/categories.schema';
 import Tags from './schema/tags.schema';
 import Articles from './schema/articles.schema';
+import Outlets from './schema/outlets.schema';
+import firebase from 'firebase';
+import {FirebaseClientStorage} from '@canner/storage';
 
-// Install @canner/@canner/storage and uncomment the codes below to upload image in your CMS
-// More Info: https://www.canner.io/docs/guides-storage.html
-// --------------------------------------
-// import {ImgurStorage} from '@canner/storage';
-// const imageStorage = new ImgurStorage({
-//   clientId: "your imgur client id",
-//   mashapeKey: "" // optional
-// });
-console.log(builder);
+
 
 const userColumns = [{
   title: 'Name',
@@ -72,8 +67,21 @@ const articleColumns = [{
   dataIndex: 'articleName',
 }];
 
+const outletsColumns = [{
+  title: 'Article Name',
+  dataIndex: 'outletName',
+}];
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyBdL4GtTMObajo_stnxNaSnvhIcRl5UIeU',
+  storageBucket: 'gatsby-morningharwood.appspot.com'
+});
+
+firebase.auth().signInAnonymously();
+const imageStorage = new FirebaseClientStorage({firebase});
+
 export default (
-  <root>
+  <root imageStorage={imageStorage}>
     <Users columns={userColumns} />
     <Routes columns={routeColumns} />
     <Clients columns={clientColumns} />
@@ -83,6 +91,6 @@ export default (
     <Tags columns={tagColumns}/>
     <Components columns={componentColumns} />
     <Articles columns={articleColumns} />
-
+    <Outlets columns={outletsColumns} />
   </root>
 );

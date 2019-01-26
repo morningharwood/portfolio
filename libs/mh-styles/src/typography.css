@@ -1,0 +1,233 @@
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+:root {
+    --font-size: 100%;
+    --ratio: 1.333;
+    --ratio-alt: 1.68;
+
+    --ms5: calc(var(--ms4) * var(--ratio));
+    --ms4: calc(var(--ms3) * var(--ratio));
+    --ms3: calc(var(--ms2) * var(--ratio));
+    --ms2: calc(var(--ms1) * var(--ratio));
+    --ms1: calc(var(--ms0) * var(--ratio));
+    --ms0: calc(var(--font-size) * var(--ratio));
+    --ms-1: calc(var(--ms0) / var(--ratio));
+    --ms-2: calc(var(--ms-1) / var(--ratio));
+    --ms-3: calc(var(--ms-2) / var(--ratio));
+    --ms-4: calc(var(--ms-3) / var(--ratio));
+    --ms-5: calc(var(--ms-4) / var(--ratio));
+
+    --ms5a: calc(var(--ms4) * var(--ratio-alt));
+    --ms4a: calc(var(--ms3) * var(--ratio-alt));
+    --ms3a: calc(var(--ms2) * var(--ratio-alt));
+    --ms2a: calc(var(--ms1) * var(--ratio-alt));
+    --ms1a: calc(var(--ms0) * var(--ratio-alt));
+    --ms0a: calc(var(--font-size) * var(--ratio-alt));
+    --ms-1a: calc(var(--ms0) / var(--ratio-alt));
+    --ms-2a: calc(var(--ms-1) / var(--ratio-alt));
+    --ms-3a: calc(var(--ms-2) / var(--ratio-alt));
+    --ms-4a: calc(var(--ms-3) / var(--ratio-alt));
+    --ms-5a: calc(var(--ms-4) / var(--ratio-alt));
+
+    --bg: #fff;
+    --bgOn: #333;
+
+    --primary: #333;
+    --primaryOn: #eee;
+
+    --secondary: #f7f7f7;
+    --secondaryOn: #555;
+
+    --tertiary: #ddd;
+    --tertiaryOn: #555;
+
+    --primaryAlt: #ff6347;
+    --primaryAltOn: #fff;
+
+    --secondaryAlt: rgba(10, 185, 207, .3);
+    --secondaryAltOn: #333;
+    --mono: monospace;
+    --serif:  serif;
+    --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body {
+    font-family: var(--sans);
+    font-weight: normal;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+    margin: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+
+main {
+    display: block;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+img {
+    border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
