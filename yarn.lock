@@ -3275,7 +3275,7 @@ canner-ref-id@2.0.14:
   version "2.0.14"
   resolved "https://unpm.uberinternal.com/canner-ref-id/-/canner-ref-id-2.0.14.tgz#5715d45d92dee2efa3ef683c77cfc199db4375ae"
 
-canner@^2.0.49:
+canner@^2.0.51:
   version "2.0.51"
   resolved "https://unpm.uberinternal.com/canner/-/canner-2.0.51.tgz#7001f32a27d471489b0fe01db10c8812fc058922"
   dependencies:
